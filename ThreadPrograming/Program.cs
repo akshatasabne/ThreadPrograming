@@ -22,7 +22,9 @@ namespace ThreadPrograming
         }
         public void M2()
         {
-            for(int i=0; i < 10; i++)
+            Thread t1 = Thread.CurrentThread;// to read the thread name
+
+            for (int i=0; i < 10; i++)
             {
                 Console.WriteLine(i);
             }
@@ -35,6 +37,10 @@ namespace ThreadPrograming
             t1.Start();
             t2.Start();
             t1.Name = "First Thread";
+            t1.Name = "Second Number";
+            t1.Priority = ThreadPriority.Lowest;
+            t2.Priority = ThreadPriority.Highest;
+
         }
     }
 }
